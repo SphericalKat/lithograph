@@ -9,7 +9,13 @@
 }
 
 a {
+  @apply text-amber;
   text-decoration: underline;
+  font-weight: 600;
+}
+
+a:hover {
+  color: white;
 }
 
 hr {
