@@ -1,5 +1,5 @@
 <template>
-  <header class="flex flex-col sm:flex-row justify-center items-center pb-8 pt-2">
+  <header class="flex flex-wrap justify-center items-center pb-8 pt-2">
     <nuxt-link to="/" class="text-amber hover:text-white mx-4"
       >SphericalKat</nuxt-link
     >

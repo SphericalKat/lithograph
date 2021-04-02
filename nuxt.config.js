@@ -9,26 +9,25 @@ export default {
   head: {
     title: 'SphericalKat',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'en',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: "SphericalKat's musings" }
+      {
+        hid: 'description',
+        name: 'description',
+        content: "SphericalKat's musings",
+      },
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-    '@/assets/css/main.css',
-  ],
+  css: ['@/assets/css/main.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-  ],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -44,22 +43,20 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-  ],
+  modules: [],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-  },
+  build: {},
 
   tailwindcss: {
-    jit: true
+    jit: true,
   },
 
   // Google fonts
   googleFonts: {
     display: 'swap',
     families: {
-      'JetBrains+Mono': true,
-    }
-  }
+      'JetBrains+Mono': [100, 200, 300, 400, 500, 600, 700, 800],
+    },
+  },
 }
