@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col max-w-5xl m-auto h-full">
+  <div class="flex flex-col max-w-6xl m-auto h-full p-6">
     <Header />
 
     <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 h-full">

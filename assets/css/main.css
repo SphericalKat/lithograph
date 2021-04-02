@@ -11,3 +11,32 @@
 a {
   text-decoration: underline;
 }
+
+hr {
+  margin: 20px 0;
+  overflow: hidden;
+  border: 0;
+  height: 20px;
+}
+
+hr:after {
+  content: '---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------';
+  color: #4f4f4f;
+}
+
+blockquote {
+  padding-left: 2ch;
+  overflow: hidden;
+  color: #57d0eb;
+  margin: 20px 0;
+  position: relative;
+}
+
+blockquote:after {
+  content: '>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>';
+  white-space: pre;
+  position: absolute;
+  color: #57d0eb;
+  top: 0;
+  left: 0;
+}
