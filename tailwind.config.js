@@ -11,7 +11,7 @@ module.exports = {
       'nuxt.config.ts'
     ]
   },
-  darkMode: false, // or 'media' or 'class'
+  darkMode: true, // or 'media' or 'class'
   theme: {
     extend: {
       fontFamily: {
@@ -19,6 +19,11 @@ module.exports = {
         'mono': ['JetBrains Mono'],
         'display': ['JetBrains Mono'],
         'body': ['JetBrains Mono'],
+      },
+
+      colors: {
+        'selected-grey': '#8f93a2',
+        'amber': '#ffcb6b',
       }
     },
   },
