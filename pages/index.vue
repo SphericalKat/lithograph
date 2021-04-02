@@ -2,12 +2,12 @@
   <div class="flex flex-col max-w-5xl m-auto h-full p-6">
     <Header />
 
-    <div class="grid grid-cols-1 sm:grid-cols-4 sm:gap-8 h-full">
+    <div class="grid grid-cols-1 sm:grid-cols-4 sm:gap-8">
       <div class="col-span-1 font-mono m-auto sm:m-0">
         <nuxt-img src="https://avatars.githubusercontent.com/u/31761843" loading="lazy" />
       </div>
       
-      <div class="col-span-3">
+      <div class="col-span-3 mt-6 sm:m-0">
         <h1>Amogh Lele</h1>
         <hr class="m-0">
         
@@ -39,9 +39,9 @@
           <li><a href="https://twitter.com/ATechnoHazard">Twitter</a></li>
         </ul>
       </div>
-    </div>
 
-    <Footer />
+    </div>
+      <Footer />
   </div>
 </template>
 
