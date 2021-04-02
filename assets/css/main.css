@@ -77,3 +77,19 @@ li:after {
   left: 0;
   content: '-';
 }
+
+html::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+html::-webkit-scrollbar-track {
+  padding: 8px;
+  background: rgb(22, 23, 29);
+}
+html::-webkit-scrollbar-thumb {
+  background: rgb(123, 123, 123);
+  border-radius: 20px;
+}
+html:hover::-webkit-scrollbar-thumb {
+  visibility:visible;
+}

@@ -4,7 +4,7 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-4 sm:gap-8 h-full">
       <div class="col-span-1 font-mono m-auto sm:m-0">
-        <nuxt-img src="/images/sphericalkat.jpeg" loading="lazy" />
+        <nuxt-img src="https://avatars.githubusercontent.com/u/31761843" loading="lazy" />
       </div>
       
       <div class="col-span-3">

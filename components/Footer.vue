@@ -1,5 +1,5 @@
 <template>
-  <footer class="flex flex-col w-full">
+  <footer class="flex flex-col w-full pb-6">
      <hr />
     <p class="mb-3">Copyright {{ new Date().getFullYear() }} SphericalKat.</p>
     <blockquote>
