@@ -1,5 +1,6 @@
 <template>
   <footer class="flex flex-col w-full">
+     <hr />
     <p class="mb-3">Copyright {{ new Date().getFullYear() }} SphericalKat.</p>
     <blockquote>
       All opinions that may be listed here are my own and are not necessarily

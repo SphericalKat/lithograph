@@ -1,15 +1,45 @@
 <template>
-  <div class="flex flex-col max-w-6xl m-auto h-full p-6">
+  <div class="flex flex-col max-w-5xl m-auto h-full p-6">
     <Header />
 
-    <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 h-full">
-      <div class="col-span-1 font-mono">
+    <div class="grid grid-cols-1 sm:grid-cols-4 sm:gap-8 h-full">
+      <div class="col-span-1 font-mono m-auto sm:m-0">
         <nuxt-img src="/images/sphericalkat.jpeg" loading="lazy" />
       </div>
-      <div class="col-span-3">3</div>
-    </div>
+      
+      <div class="col-span-3">
+        <h1>Amogh Lele</h1>
+        <hr class="m-0">
+        
+        <h2 class="mt-4">Skills</h2>
+        <ul class="mt-2">
+          <li>Java/Kotlin, Rust, Go, JS/TS, Dart, Python, Elixir and other languages</li>
+          <li>React, Vue, Nuxt</li>
+          <li>ASP.NET core, Django, Phoenix</li>
+          <li>Native Android, Flutter, React Native</li>
+          <li>Docker</li>
+          <li>Kubernetes</li>
+          <li>TensorFlow</li>
+        </ul>
 
-    <hr />
+        <h2 class="mt-6">Highlighted Projects</h2>
+        <ul class="mt-2">
+          <li><a href="https://github.com/sphericalkat/katbin">Katbin</a> - A simple and elegant pastebin + URL shortener</li>
+          <li><a href="https://github.com/sphericalkat/sphericalk.at">This website</a> - My brutalist portfolio site</li>
+          <li><a href="https://github.com/SphericalKat/dart-fuzzywuzzy">fuzzywuzzy</a> - A Dart port of the popular fuzzywuzzy library</li>
+          <li><a href="https://github.com/SphericalKat/secur">secur</a> - A cross-platform 2FA TOTP app with a beautiful UI</li>
+          <li><a href="https://github.com/AnimeTwist/twist-mobile">Anime Twist</a> - A native Android client for Anime Twist</li>
+        </ul>
+
+        <h2 class="mt-8">Quick links</h2>
+        <ul class="mt-2">
+          <li><a href="https://github.com/sphericalkat">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/amogh-lele">LinkedIn</a></li>
+          <li><a href="https://t.me/sphericalkat">Telegram</a></li>
+          <li><a href="https://twitter.com/ATechnoHazard">Twitter</a></li>
+        </ul>
+      </div>
+    </div>
 
     <Footer />
   </div>

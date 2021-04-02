@@ -20,7 +20,7 @@ a:hover {
 
 hr {
   margin: 20px 0;
-  overflow: hidden;
+  overflow-x: hidden;
   border: 0;
   height: 20px;
 }
@@ -45,4 +45,35 @@ blockquote:after {
   color: #57d0eb;
   top: 0;
   left: 0;
+}
+
+h1 {
+  color: #159cff;
+  font-weight: bold;
+}
+
+h1:before {
+  content: '# ';
+}
+
+h2 {
+  color: #159cff;
+  font-weight: bold;
+}
+
+h2:before {
+  content: '## ';
+}
+
+li {
+  position: relative;
+  display: block;
+  padding-left: 20px;
+}
+
+li:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '-';
 }
