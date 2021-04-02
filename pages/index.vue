@@ -13,9 +13,9 @@
         
         <h2 class="mt-4">Skills</h2>
         <ul class="mt-2">
-          <li>Java/Kotlin, Rust, Go, JS/TS, Dart, Python, Elixir and other languages</li>
+          <li>Kotlin/Java, Rust, Go, JS/TS, Dart, Python, Elixir and other languages</li>
           <li>React, Vue, Nuxt</li>
-          <li>ASP.NET core, Django, Phoenix</li>
+          <li>Node.JS, ASP.NET core, Django, Flask, FastAPI, Phoenix and other web frameworks</li>
           <li>Native Android, Flutter, React Native</li>
           <li>Docker</li>
           <li>Kubernetes</li>
