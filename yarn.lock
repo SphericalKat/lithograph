@@ -1203,10 +1203,10 @@
     node-html-parser "^3.1.2"
     ufo "^0.6.10"
 
-"@nuxt/image@^0.4.1":
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/@nuxt/image/-/image-0.4.1.tgz#b22cf7b671310c6d36c43dd55674ecb6dbe1096a"
-  integrity sha512-4CjvUgincnXR5Sesy8CvyB+L8DdgA3+QZJuDIN8Jm+WN2p/5MkIuK71Nh0MsAjJC4DLmk9YzGwxnu+A+hQElrg==
+"@nuxt/image@^0.4.2":
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/@nuxt/image/-/image-0.4.2.tgz#a5ef534b0690dc36b35b8959385ccb1938d5bc93"
+  integrity sha512-de+csLaUgI2k2/f5f13WoIgIrAjLLeQBkDO9vThjRXH5hxudT0tgrtMdtoFA8VKyIMHGA3bUzx/hb6K3Rx5i2w==
   dependencies:
     allowlist "^0.1.1"
     consola "^2.15.3"
@@ -1218,7 +1218,7 @@
     is-https "^3.0.2"
     node-fetch "^2.6.1"
     requrl "^3.0.2"
-    ufo "^0.6.6"
+    ufo "^0.6.11"
     upath "^2.0.1"
 
 "@nuxt/loading-screen@^2.0.3":
@@ -9541,10 +9541,10 @@ ua-parser-js@^0.7.26:
   resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.26.tgz#b3731860e241419abd5b542b1a0881070d92e0ce"
   integrity sha512-VwIvGlFNmpKbjzRt51jpbbFTrKIEgGHxIwA8Y69K1Bqc6bTIV7TaGGABOkghSFQWsLmcRB4drGvpfv9z2szqoQ==
 
-ufo@^0.6.1, ufo@^0.6.10, ufo@^0.6.6:
-  version "0.6.10"
-  resolved "https://registry.yarnpkg.com/ufo/-/ufo-0.6.10.tgz#c7ace9b8f72cb08c35e3a8c8edc76f062fbaa7d0"
-  integrity sha512-sMbJnrBcKKsbVyr6++hb0n9lCmrMqkJrNnJIOJ3sckeqY6NMfAULcRGbBWcASSnN1HDV3YqiGCPzi9RVs511bw==
+ufo@^0.6.1, ufo@^0.6.10, ufo@^0.6.11, ufo@^0.6.6:
+  version "0.6.11"
+  resolved "https://registry.yarnpkg.com/ufo/-/ufo-0.6.11.tgz#69311ed4abc8ab671c83754b79ce0d396fea1075"
+  integrity sha512-Yu7TJThwlr23peOkX/+hm6LfkyBs+eDWV880468PTrjKBKjjsNWFFwIuOqDfmXngRo9TZ4+twFYueRH0OLl0Gw==
 
 uglify-js@^3.5.1:
   version "3.13.3"
