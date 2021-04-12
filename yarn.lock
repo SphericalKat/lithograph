@@ -1203,10 +1203,10 @@
     node-html-parser "^3.1.2"
     ufo "^0.6.10"
 
-"@nuxt/image@^0.4.2":
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/@nuxt/image/-/image-0.4.2.tgz#a5ef534b0690dc36b35b8959385ccb1938d5bc93"
-  integrity sha512-de+csLaUgI2k2/f5f13WoIgIrAjLLeQBkDO9vThjRXH5hxudT0tgrtMdtoFA8VKyIMHGA3bUzx/hb6K3Rx5i2w==
+"@nuxt/image@^0.4.4":
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/@nuxt/image/-/image-0.4.4.tgz#a7f61a6b7a9a0e9cbe799b2db754259022243401"
+  integrity sha512-K+gXIC6hb25Eh2lN5xLlyMid8mN7g5KfpIb2kqKXSX5n2OOrJo2VpjTtnLbO307Qlc9GkwB0+6Iz3vqdZCUKFQ==
   dependencies:
     allowlist "^0.1.1"
     consola "^2.15.3"
