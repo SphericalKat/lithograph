@@ -6,7 +6,8 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "lint": "lynt"
   },
   "dependencies": {
     "core-js": "^3.10.1",
@@ -23,6 +24,7 @@
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-prettier": "^3.3.1",
     "postcss": "^8.2.10",
+    "lynt": "^0.5.5",
     "prettier": "^2.2.1"
   }
 }
