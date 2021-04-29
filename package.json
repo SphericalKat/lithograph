@@ -1,0 +1,23 @@
+{
+  "name": "lithograph",
+  "version": "0.1.0",
+  "description": "A simple CMS for serving my blog and website",
+  "main": "index.js",
+  "repository": "https://github.com/SphericalKat/lithograph",
+  "author": "SphericalKat <amolele@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^4.0.3",
+    "autoprefixer": "^10.2.5",
+    "cssnano": "^5.0.2",
+    "postcss": "^8.2.13",
+    "postcss-cli": "^8.3.1",
+    "rimraf": "^3.0.2",
+    "tailwindcss": "^2.1.2"
+  },
+  "scripts": {
+    "clean": "rimraf public/tailwind.generated.css",
+    "build": "postcss public/tailwind.css -o public/tailwind.generated.css",
+    "release": "NODE_ENV=production postcss public/tailwind.css -o public/tailwind.generated.css"
+  }
+}
