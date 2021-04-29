@@ -13,3 +13,5 @@ readme = "README.md"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+askama = { version = "0.10.5", features = ["with-rocket"] }
+rocket = "0.4.7"
