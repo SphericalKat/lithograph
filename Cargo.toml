@@ -20,3 +20,4 @@ rocket_contrib = { version = "0.4.7", default-features = false, features = ["ser
 rust-embed = {version = "5.9.0", features = ["debug-embed"]}
 chrono = "0.4.19"
 comrak = "0.10.0"
+anyhow = "1.0.40"
