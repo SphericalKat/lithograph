@@ -66,11 +66,22 @@ h1:before {
 h2 {
   color: var(--electric-blue);
   font-weight: 800;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
 }
 
 h2:before {
   content: "## ";
+  font-weight: 800;
+}
+
+h3 {
+  color: var(--electric-blue);
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+h3:before {
+  content: "### ";
   font-weight: 800;
 }
 
