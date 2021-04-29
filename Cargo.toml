@@ -1,0 +1,15 @@
+[package]
+name = "lithograph"
+version = "0.1.0"
+authors = ["SphericalKat <amolele@gmail.com>"]
+edition = "2018"
+description = "A simple CMS for serving my blog and website"
+repository = "https://github.com/SphericalKat/lithograph"
+homepage = "https://github.com/SphericalKat/lithograph"
+license = "MIT"
+keywords = ["cms", "website", "blog", "web"]
+readme = "README.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
