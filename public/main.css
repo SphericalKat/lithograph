@@ -1,3 +1,7 @@
+:root {
+  --electric-blue: #159cff;
+  --sky-blue: #57d0eb;
+}
 html,
 body {
   height: 100%;
@@ -34,7 +38,7 @@ hr:after {
 blockquote {
   padding-left: 2ch;
   overflow: hidden;
-  color: #57d0eb;
+  color: var(--sky-blue);
   margin: 20px 0;
   position: relative;
 }
@@ -43,13 +47,13 @@ blockquote:after {
   content: ">\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>";
   white-space: pre;
   position: absolute;
-  color: #57d0eb;
+  color: var(--sky-blue);
   top: 0;
   left: 0;
 }
 
 h1 {
-  color: #159cff;
+  color: var(--electric-blue);
   font-weight: 800;
   font-size: 1.8rem;
 }
@@ -60,7 +64,7 @@ h1:before {
 }
 
 h2 {
-  color: #159cff;
+  color: var(--electric-blue);
   font-weight: 800;
   font-size: 1.2rem;
 }

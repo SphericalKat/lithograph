@@ -20,17 +20,17 @@ use rocket::{
 struct Static;
 
 #[derive(Template)]
-#[template(path = "index.html")]
+#[template(path = "index/index.html")]
 struct IndexTemplate {
     name: String,
-    year: String
+    year: String,
 }
 
 #[get("/")]
 fn index() -> IndexTemplate {
     IndexTemplate {
         name: "SphericalKat".to_owned(),
-        year: Local::now().date().year().to_string()
+        year: Local::now().date().year().to_string(),
     }
 }
 
