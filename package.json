@@ -18,6 +18,7 @@
   "scripts": {
     "clean": "rimraf public/tailwind.generated.css",
     "build": "postcss public/tailwind.css -o public/tailwind.generated.css",
-    "release": "NODE_ENV=production postcss public/tailwind.css -o public/tailwind.generated.css"
+    "release": "NODE_ENV=production postcss public/tailwind.css -o public/tailwind.generated.css",
+    "start": "yarn build && cargo run"
   }
 }
