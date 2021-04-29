@@ -10,7 +10,7 @@
     "lint": "lynt"
   },
   "dependencies": {
-    "core-js": "^3.11.0",
+    "core-js": "^3.11.1",
     "nuxt": "^2.15.3"
   },
   "devDependencies": {
