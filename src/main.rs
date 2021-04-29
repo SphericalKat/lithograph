@@ -9,6 +9,7 @@ extern crate rust_embed;
 use std::{ffi::OsStr, io::Cursor, path::PathBuf};
 
 use askama::Template;
+use chrono::{Datelike, Local};
 use rocket::{
     http::{ContentType, Status},
     response,
@@ -22,12 +23,14 @@ struct Static;
 #[template(path = "index.html")]
 struct IndexTemplate {
     name: String,
+    year: String
 }
 
 #[get("/")]
 fn index() -> IndexTemplate {
     IndexTemplate {
         name: "SphericalKat".to_owned(),
+        year: Local::now().date().year().to_string()
     }
 }
 

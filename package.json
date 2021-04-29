@@ -20,7 +20,8 @@
     "build:tailwind": "postcss public/tailwind.css -o public/tailwind.generated.css",
     "build:custom": "postcss public/main.css -o public/main.generated.css",
     "build": "yarn build:tailwind && yarn build:custom",
-    "release": "NODE_ENV=production yarn build",
-    "start": "yarn build && cargo run"
+    "release": "NODE_ENV=production yarn build && cargo build --release",
+    "dev": "yarn build && cargo run",
+    "start": "yarn release && cargo run --release"
   }
 }
