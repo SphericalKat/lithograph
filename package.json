@@ -17,8 +17,10 @@
   },
   "scripts": {
     "clean": "rimraf public/tailwind.generated.css",
-    "build": "postcss public/tailwind.css -o public/tailwind.generated.css",
-    "release": "NODE_ENV=production postcss public/tailwind.css -o public/tailwind.generated.css",
+    "build:tailwind": "postcss public/tailwind.css -o public/tailwind.generated.css",
+    "build:custom": "postcss public/main.css -o public/main.generated.css",
+    "build": "yarn build:tailwind && yarn build:custom",
+    "release": "NODE_ENV=production yarn build",
     "start": "yarn build && cargo run"
   }
 }

@@ -1,0 +1,95 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  @apply text-amber;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+a:hover {
+  color: white;
+}
+
+hr {
+  margin: 20px 0;
+  overflow-x: hidden;
+  border: 0;
+  height: 20px;
+}
+
+hr:after {
+  content: "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
+  color: #4f4f4f;
+}
+
+blockquote {
+  padding-left: 2ch;
+  overflow: hidden;
+  color: #57d0eb;
+  margin: 20px 0;
+  position: relative;
+}
+
+blockquote:after {
+  content: ">\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>";
+  white-space: pre;
+  position: absolute;
+  color: #57d0eb;
+  top: 0;
+  left: 0;
+}
+
+h1 {
+  color: #159cff;
+  font-weight: 800;
+  font-size: 1.8rem;
+}
+
+h1:before {
+  content: "# ";
+  font-weight: 800;
+}
+
+h2 {
+  color: #159cff;
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+h2:before {
+  content: "## ";
+  font-weight: 800;
+}
+
+li {
+  position: relative;
+  display: block;
+  padding-left: 20px;
+}
+
+li:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "-";
+}
+
+html::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+html::-webkit-scrollbar-track {
+  padding: 8px;
+  background: rgb(22, 23, 29);
+}
+html::-webkit-scrollbar-thumb {
+  background: rgb(123, 123, 123);
+  border-radius: 20px;
+}
+html:hover::-webkit-scrollbar-thumb {
+  visibility: visible;
+}

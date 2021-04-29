@@ -27,7 +27,7 @@ struct IndexTemplate {
 #[get("/")]
 fn index() -> IndexTemplate {
     IndexTemplate {
-        name: "Amogh".to_owned(),
+        name: "SphericalKat".to_owned(),
     }
 }
 
