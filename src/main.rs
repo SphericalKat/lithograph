@@ -98,7 +98,9 @@ fn get_blog<'r>(file: String) -> response::Result<'r> {
                 description_lists: false,
                 front_matter_delimiter: None,
             };
+            opts.render.unsafe_ = true; // needed to embed gists
             let html = markdown_to_html(&post_text, opts);
+            println!("{}", html);
             response::Response::build()
                 .header(ContentType::HTML)
                 .sized_body(Cursor::new(

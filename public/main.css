@@ -1,6 +1,7 @@
 :root {
   --electric-blue: #159cff;
   --sky-blue: #57d0eb;
+  --light-grey: #1f2233;
 }
 html,
 body {
@@ -113,3 +114,4 @@ html::-webkit-scrollbar-thumb {
 html:hover::-webkit-scrollbar-thumb {
   visibility: visible;
 }
+
