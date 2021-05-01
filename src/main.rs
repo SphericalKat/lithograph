@@ -44,6 +44,7 @@ struct Posts;
 #[derive(Template)]
 #[template(path = "index/index.html")]
 struct IndexTemplate {
+    title: String,
     year: String,
     path: String,
     version: String,
@@ -53,13 +54,12 @@ struct Post {
     date: String,
     title: String,
     slug: String,
-    path: String,
-    version: String,
 }
 
 #[derive(Template)]
 #[template(path = "blog/index.html")]
 struct BlogTemplate {
+    title: String,
     year: String,
     posts: Vec<Post>,
     path: String,
@@ -69,6 +69,7 @@ struct BlogTemplate {
 #[derive(Template)]
 #[template(path = "blog/post.html")]
 struct PostTemplate {
+    title: String,
     year: String,
     post: String,
     path: String,
@@ -81,6 +82,7 @@ fn index() -> IndexTemplate {
         year: Local::now().date().year().to_string(),
         path: EXE.to_string(),
         version: VERSION.to_string(),
+        title: "SphericalKat".to_owned()
     }
 }
 
@@ -94,8 +96,6 @@ fn blog() -> BlogTemplate {
                 date: split[0].to_owned(),
                 title: split[1].replace("-", " ").replace(".md", ""),
                 slug: slug.to_owned().replace(".md", ""),
-                path: EXE.to_string(),
-                version: VERSION.to_string(),
             }
         })
         .collect();
@@ -105,6 +105,7 @@ fn blog() -> BlogTemplate {
         posts: post_list,
         path: EXE.to_string(),
         version: VERSION.to_string(),
+        title: "Blog - SphericalKat".to_owned(),
     }
 }
 
@@ -151,6 +152,7 @@ fn get_blog<'r>(file: String) -> response::Result<'r> {
                         post: String::from_utf8(html).unwrap(),
                         path: EXE.to_string(),
                         version: VERSION.to_string(),
+                        title: file.splitn(2, '_').collect::<Vec<_>>()[1].to_owned().replace('-', " ")
                     }
                     .render()
                     .unwrap(),
