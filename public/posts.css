@@ -16,16 +16,20 @@ hr {
 }
 
 pre {
+    display: block;
     background-color: var(--light-grey);
     padding: 1rem;
     margin-top: 1rem;
     margin-bottom: 2rem;
+    white-space: pre;
 }
 
 pre > code {
+    display: block;
     color: white;
     padding: 0;
     font-weight: 500;
+    overflow-x: auto;
 }
 
 code {

@@ -117,7 +117,7 @@ fn get_blog<'r>(file: String) -> response::Result<'r> {
             });
 
             let mut html = vec![];
-            format_html(root, &ComrakOptions::default(), &mut html).unwrap();
+            format_html(root, opts, &mut html).unwrap();
             response::Response::build()
                 .header(ContentType::HTML)
                 .sized_body(Cursor::new(
