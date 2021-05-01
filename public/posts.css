@@ -31,3 +31,19 @@ code {
   font-weight: 900;
   color: #ff5370;
 }
+
+code::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+code::-webkit-scrollbar-track {
+  padding: 8px;
+  background: rgb(22, 23, 29);
+}
+code::-webkit-scrollbar-thumb {
+  background: rgb(123, 123, 123);
+  border-radius: 20px;
+}
+code:hover::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
