@@ -82,7 +82,7 @@ fn index() -> IndexTemplate {
         year: Local::now().date().year().to_string(),
         path: EXE.to_string(),
         version: VERSION.to_string(),
-        title: "SphericalKat".to_owned()
+        title: "SphericalKat".to_owned(),
     }
 }
 
@@ -152,7 +152,9 @@ fn get_blog<'r>(file: String) -> response::Result<'r> {
                         post: String::from_utf8(html).unwrap(),
                         path: EXE.to_string(),
                         version: VERSION.to_string(),
-                        title: file.splitn(2, '_').collect::<Vec<_>>()[1].to_owned().replace('-', " ")
+                        title: file.splitn(2, '_').collect::<Vec<_>>()[1]
+                            .to_owned()
+                            .replace('-', " "),
                     }
                     .render()
                     .unwrap(),
@@ -183,8 +185,18 @@ fn public<'r>(file: PathBuf) -> response::Result<'r> {
     )
 }
 
+#[get("/favicon.ico")]
+fn favicon<'r>() -> response::Result<'r> {
+    let icon = Static::get("favicon.ico").unwrap();
+    let content_type = ContentType::Icon;
+    response::Response::build()
+        .header(content_type)
+        .sized_body(Cursor::new(icon))
+        .ok()
+}
+
 fn main() {
     rocket::ignite()
-        .mount("/", routes!(index, public, blog, get_blog))
+        .mount("/", routes!(index, public, blog, get_blog, favicon))
         .launch();
 }

@@ -1,0 +1,21 @@
+{
+    "name": "SphericalKat",
+    "short_name": "SphericalKat",
+    "description": "SphericalKat's musings about life, the universe, and everything.",
+    "icons": [
+        {
+            "src": "/static/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/static/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#0f111a",
+    "background_color": "#0f111a",
+    "display": "standalone",
+    "orientation": "portrait-primary"
+}
