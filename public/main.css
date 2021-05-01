@@ -57,6 +57,7 @@ h1 {
   color: var(--electric-blue);
   font-weight: 800;
   font-size: 1.8rem;
+  margin: 1rem 0;
 }
 
 h1:before {
@@ -68,6 +69,7 @@ h2 {
   color: var(--electric-blue);
   font-weight: 800;
   font-size: 1.6rem;
+  margin: 1rem 0;
 }
 
 h2:before {
@@ -79,6 +81,7 @@ h3 {
   color: var(--electric-blue);
   font-weight: 800;
   font-size: 1.2rem;
+  margin: 1rem 0;
 }
 
 h3:before {
@@ -114,4 +117,3 @@ li:after {
 *:hover::-webkit-scrollbar-thumb {
   visibility: visible;
 }
-
