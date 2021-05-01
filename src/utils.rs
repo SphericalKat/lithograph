@@ -1,7 +1,6 @@
 use comrak::nodes::AstNode;
 
 use syntect::{
-    highlighting::ThemeSet,
     html::{ClassStyle, ClassedHTMLGenerator},
     parsing::SyntaxSet,
     util::LinesWithEndings,
@@ -9,7 +8,6 @@ use syntect::{
 
 pub fn highlight_text(text: String, lang: String) -> String {
     let syntax_set = SyntaxSet::load_defaults_newlines();
-    let theme_set = ThemeSet::load_defaults();
 
     let syntax = syntax_set
         .find_syntax_by_extension(&lang)
