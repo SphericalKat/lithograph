@@ -22,7 +22,11 @@ Whoa there, hold yer horses. Let’s understand what a worker does exactly befor
 A worker is a piece of code that’s executed when a particular route on a website proxied by Cloudflare is accessed, before the request reaches Cloudflare’s cache.
 The following is a super simple worker, which just responds with a `Hello World!`.
 
-<iframe src="https://gist.github.com/SphericalKat/2f34f6e83c7bc133a0eb33b0dd0ff593.pibb"></iframe>
+```js
+addEventListener('fetch', event => {
+  event.respondWith(new Response('Hello World!'))
+})
+```
 
 ### Wrangling your workers with wrangler
 

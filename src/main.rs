@@ -6,15 +6,21 @@ extern crate rocket;
 #[macro_use]
 extern crate rust_embed;
 
+pub mod utils;
+
 use std::{ffi::OsStr, io::Cursor, path::PathBuf};
 
 use askama::Template;
 use chrono::{Datelike, Local};
-use comrak::{markdown_to_html, ComrakExtensionOptions, ComrakOptions};
+use comrak::{
+    format_html, nodes::NodeValue, parse_document, Arena, ComrakExtensionOptions, ComrakOptions,
+};
 use rocket::{
     http::{ContentType, Status},
     response,
 };
+
+use crate::utils::{highlight_text, iter_nodes};
 
 #[derive(RustEmbed)]
 #[folder = "public/"]
@@ -63,7 +69,6 @@ fn blog() -> BlogTemplate {
         .map(|f| {
             let slug = f.as_ref();
             let split: Vec<_> = slug.splitn(2, '_').collect();
-            println!("{}", slug.to_owned().replace(".md", ""));
             Post {
                 date: split[0].to_owned(),
                 title: split[1].replace("-", " ").replace(".md", ""),
@@ -99,14 +104,26 @@ fn get_blog<'r>(file: String) -> response::Result<'r> {
                 front_matter_delimiter: None,
             };
             opts.render.unsafe_ = true; // needed to embed gists
-            let html = markdown_to_html(&post_text, opts);
-            println!("{}", html);
+
+            let arena = Arena::new();
+            let root = parse_document(&arena, &post_text, opts);
+            iter_nodes(root, &|node| match &mut node.data.borrow_mut().value {
+                &mut NodeValue::CodeBlock(ref mut block) => {
+                    let lang = String::from_utf8(block.info.clone()).unwrap();
+                    let code = String::from_utf8(block.literal.clone()).unwrap();
+                    block.literal = highlight_text(code, lang).as_bytes().to_vec();
+                }
+                _ => (),
+            });
+
+            let mut html = vec![];
+            format_html(root, &ComrakOptions::default(), &mut html).unwrap();
             response::Response::build()
                 .header(ContentType::HTML)
                 .sized_body(Cursor::new(
                     PostTemplate {
                         year: Local::now().date().year().to_string(),
-                        post: html,
+                        post: String::from_utf8(html).unwrap(),
                     }
                     .render()
                     .unwrap(),
