@@ -15,12 +15,23 @@ use chrono::{Datelike, Local};
 use comrak::{
     format_html, nodes::NodeValue, parse_document, Arena, ComrakExtensionOptions, ComrakOptions,
 };
+use lazy_static::lazy_static;
 use rocket::{
     http::{ContentType, Status},
     response,
 };
+use rustc_version_runtime::version;
 
 use crate::utils::{highlight_text, iter_nodes};
+
+lazy_static! {
+    static ref EXE: String = std::env::current_exe()
+        .unwrap()
+        .as_path()
+        .to_string_lossy()
+        .to_string();
+    static ref VERSION: String = version().to_string();
+}
 
 #[derive(RustEmbed)]
 #[folder = "public/"]
@@ -34,12 +45,16 @@ struct Posts;
 #[template(path = "index/index.html")]
 struct IndexTemplate {
     year: String,
+    path: String,
+    version: String,
 }
 
 struct Post {
     date: String,
     title: String,
     slug: String,
+    path: String,
+    version: String,
 }
 
 #[derive(Template)]
@@ -47,6 +62,8 @@ struct Post {
 struct BlogTemplate {
     year: String,
     posts: Vec<Post>,
+    path: String,
+    version: String,
 }
 
 #[derive(Template)]
@@ -54,12 +71,16 @@ struct BlogTemplate {
 struct PostTemplate {
     year: String,
     post: String,
+    path: String,
+    version: String,
 }
 
 #[get("/")]
 fn index() -> IndexTemplate {
     IndexTemplate {
         year: Local::now().date().year().to_string(),
+        path: EXE.to_string(),
+        version: VERSION.to_string(),
     }
 }
 
@@ -73,6 +94,8 @@ fn blog() -> BlogTemplate {
                 date: split[0].to_owned(),
                 title: split[1].replace("-", " ").replace(".md", ""),
                 slug: slug.to_owned().replace(".md", ""),
+                path: EXE.to_string(),
+                version: VERSION.to_string(),
             }
         })
         .collect();
@@ -80,6 +103,8 @@ fn blog() -> BlogTemplate {
     BlogTemplate {
         year: Local::now().date().year().to_string(),
         posts: post_list,
+        path: EXE.to_string(),
+        version: VERSION.to_string(),
     }
 }
 
@@ -124,6 +149,8 @@ fn get_blog<'r>(file: String) -> response::Result<'r> {
                     PostTemplate {
                         year: Local::now().date().year().to_string(),
                         post: String::from_utf8(html).unwrap(),
+                        path: EXE.to_string(),
+                        version: VERSION.to_string(),
                     }
                     .render()
                     .unwrap(),
