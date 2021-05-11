@@ -1,5 +1,5 @@
 p {
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 
 hr {
@@ -46,4 +46,14 @@ code::-webkit-scrollbar-thumb {
 }
 code:hover::-webkit-scrollbar-thumb {
   visibility: visible;
+}
+
+.post blockquote {
+  margin: 0;
+  overflow: hidden;
+  min-height: auto;
+}
+
+.post blockquote p {
+  margin: 0;
 }

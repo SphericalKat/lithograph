@@ -1,6 +1,8 @@
 # Idiomatic TensorFlow on Android — Get started with the TensorFlow Support Library
 ![](https://miro.medium.com/max/2400/1*xjsEPItNww_khr8o2me-xg.png)
 
+<hr />
+
 ## Working with data on Android is inconvenient!
 
 If you’ve used TensorFlow Lite on Android before, chances are that you’ve had to deal with the tedious task of pre-processing data, working with `Float` arrays in a statically typed language or resize, transform, normalize, and do any of the other standard tasks required before the data is fit for consumption by the model.
