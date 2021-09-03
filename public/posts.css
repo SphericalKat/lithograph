@@ -2,6 +2,10 @@ p {
   margin-bottom: 1.2rem;
 }
 
+img {
+  width: -webkit-fill-available;
+}
+
 hr {
   margin: 0;
   padding-bottom: 24px;
