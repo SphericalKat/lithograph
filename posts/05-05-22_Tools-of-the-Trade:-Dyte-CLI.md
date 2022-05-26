@@ -1,3 +1,6 @@
+# Tools of the Trade: Dyte CLI
+*Originally published at [https://blog.dyte.io](https://blog.dyte.io/tools-of-the-trade-dyte-cli/) on May 5, 2022.*
+
 ![header](https://cdn-images-1.medium.com/max/3840/0*P5SmQan2HVKl5IV3.jpg)
 
 Dyte CLI brings [Dyte](https://dyte.io) to your terminal. It reduces context switching, helps you focus, and empowers you to more easily script and create your own workflows on top of Dyte.
@@ -103,5 +106,3 @@ We’ve tried to make the usage of Dyte’s CLI to be as pleasant and painless a
 We’ve already been using the CLI internally for months now, so bugs should be few and far between. Even so, if you find any, please report them to us!
 
 Take your Dyte experience to new heights with the CLI!
-
-*Originally published at [https://blog.dyte.io](https://blog.dyte.io/tools-of-the-trade-dyte-cli/) on May 5, 2022.*
