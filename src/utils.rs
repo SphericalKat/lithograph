@@ -17,7 +17,10 @@ pub fn highlight_text(text: String, lang: String) -> String {
         ClassedHTMLGenerator::new_with_class_style(syntax, &syntax_set, ClassStyle::Spaced);
 
     for line in LinesWithEndings::from(&text) {
-        rs_html_generator.parse_html_for_line_which_includes_newline(&line)
+        let res = rs_html_generator.parse_html_for_line_which_includes_newline(&line);
+        if res.is_err() {
+            return String::new();
+        }
     }
 
     rs_html_generator.finalize()

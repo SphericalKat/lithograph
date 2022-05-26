@@ -115,7 +115,7 @@ fn get_blog<'r>(file: String) -> response::Result<'r> {
     Posts::get(&filename).map_or_else(
         || Err(Status::NotFound),
         |d| {
-            let post_text = String::from_utf8(d.as_ref().to_vec()).unwrap();
+            let post_text = String::from_utf8(d.data.as_ref().to_vec()).unwrap();
             let mut opts = &mut ComrakOptions::default();
             opts.extension = ComrakExtensionOptions {
                 strikethrough: true,
@@ -179,7 +179,7 @@ fn public<'r>(file: PathBuf) -> response::Result<'r> {
                 .ok_or_else(|| Status::new(400, "Could not get file content type"))?;
             response::Response::build()
                 .header(content_type)
-                .sized_body(Cursor::new(d))
+                .sized_body(Cursor::new(d.data))
                 .ok()
         },
     )
@@ -191,7 +191,7 @@ fn favicon<'r>() -> response::Result<'r> {
     let content_type = ContentType::Icon;
     response::Response::build()
         .header(content_type)
-        .sized_body(Cursor::new(icon))
+        .sized_body(Cursor::new(icon.data))
         .ok()
 }
 

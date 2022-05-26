@@ -23,5 +23,6 @@
     "release": "NODE_ENV=production yarn build && cargo build --release",
     "dev": "yarn build && cargo run",
     "start": "yarn release && cargo run --release"
-  }
+  },
+  "dependencies": {}
 }
