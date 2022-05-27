@@ -11,7 +11,7 @@ pub mod utils;
 use std::{ffi::OsStr, io::Cursor, path::PathBuf};
 
 use askama::Template;
-use chrono::{Datelike, Local};
+use chrono::{Datelike, Local, NaiveDate};
 use comrak::{
     format_html, nodes::NodeValue, parse_document, Arena, ComrakExtensionOptions, ComrakOptions,
 };
@@ -88,7 +88,7 @@ fn index() -> IndexTemplate {
 
 #[get("/blog")]
 fn blog() -> BlogTemplate {
-    let post_list: Vec<_> = Posts::iter()
+    let mut post_list: Vec<_> = Posts::iter()
         .map(|f| {
             let slug = f.as_ref();
             let split: Vec<_> = slug.splitn(2, '_').collect();
@@ -99,6 +99,12 @@ fn blog() -> BlogTemplate {
             }
         })
         .collect();
+    
+    post_list.sort_by(|a, b| {
+        let date_a = NaiveDate::parse_from_str(&a.date, "%d-%m-%y").unwrap();
+        let date_b = NaiveDate::parse_from_str(&b.date, "%d-%m-%y").unwrap();
+        date_b.cmp(&date_a)
+    });
 
     BlogTemplate {
         year: Local::now().date().year().to_string(),
