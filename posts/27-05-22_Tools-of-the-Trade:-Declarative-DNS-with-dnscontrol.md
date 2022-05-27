@@ -1,6 +1,6 @@
 # Tools of the Trade: Declarative DNS with dnscontrol
 
-![Header](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zdrj2e0lb1079644mh9k.png)
+![Header](https://miro.medium.com/max/1400/0*5Y5xGZXg2_i4dDAb.png)
 
 ## 💡 A bit of context
 I recently moved my [site](https://sphericalk.at)'s hosting from DigitalOcean to [fly.io](https://fly.io). That's when I realized that I've been changing DNS records manually for years; go to the Cloudflare dashboard, change records, rinse-repeat...
@@ -13,7 +13,7 @@ As a programmer and self-professed automation fanatic, this rubbed me the wrong 
 
 It was created by StackOverflow to manage their own domains, and was subsequently open-sourced for the rest of us (Thanks StackOverflow!).
 
-It lets you _declare_ your DNS recordings using a JavaScript-ish DSL (domain specific language); for example:
+It lets you _declare_ your DNS records using a JavaScript-ish DSL (domain specific language); for example:
 
 ![Example of a DNS configuration using dnscontrol](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ofqaevh7g2vd0d1xidrp.png)
 
