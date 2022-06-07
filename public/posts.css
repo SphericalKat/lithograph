@@ -1,61 +1,53 @@
 p {
-  margin-bottom: 1.2rem;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin-bottom: 20px;
 }
 
 hr {
-  margin: 0;
-  padding-bottom: 24px;
-  padding-top: 8px;
+    margin: 0;
+    padding-bottom: 24px;
+    padding-top: 8px;
 }
 
 pre {
-  display: block;
-  background-color: var(--light-grey);
-  padding: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  white-space: pre;
+    display: block;
+    background: transparent !important;
+    border: 1px solid hsla(0, 0%, 100%, .1);
+    padding: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    white-space: pre;
 }
 
-pre > code {
-  display: block;
-  color: white;
-  padding: 0;
-  font-weight: 500;
-  overflow-x: auto;
-}
-
-code {
-  padding: 0.2rem 0.2rem;
-  background-color: var(--light-grey);
-  font-weight: 900;
-  color: #ff5370;
+pre>code {
+    display: block;
+    color: white;
+    padding: 0;
+    overflow-x: auto;
+    background: transparent;
 }
 
 code::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+    width: 8px;
+    height: 8px;
 }
+
 code::-webkit-scrollbar-track {
-  padding: 8px;
-  background: rgb(22, 23, 29);
+    padding: 8px;
+    background: rgb(22, 23, 29);
 }
+
 code::-webkit-scrollbar-thumb {
-  background: rgb(123, 123, 123);
-  border-radius: 20px;
+    background: rgb(123, 123, 123);
+    border-radius: 20px;
 }
+
 code:hover::-webkit-scrollbar-thumb {
-  visibility: visible;
-}
-
-.post blockquote {
-  margin: 0;
-  overflow: hidden;
-  min-height: auto;
-}
-
-.post blockquote p {
-  margin: 0;
+    visibility: visible;
 }
 
 .post img {

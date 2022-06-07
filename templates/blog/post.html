@@ -36,12 +36,12 @@
 </head>
 
 <body>
-	<div class="flex flex-col max-w-5xl m-auto h-full p-10">
-		<div class="post">
+	<div class="flex flex-col m-auto h-full p-10" style="max-width: 864px">
+		<article class="post">
 			{% include "header.html" %}
 
 			{{ post|safe }}
-		</div>
+		</article>
 		{% include "footer.html" %}
 	</div>
 

@@ -15,26 +15,27 @@
   <link rel="manifest" href="/static/manifest.json">
 
 	<!-- twitter meta tags -->
-	<meta name="twitter:site" content="@ATechnoHazard">
+	<meta name="twitter:site" content="@Spherical_Kat">
+	<meta name="twitter:creator" content="@Spherical_Kat">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="{{ title }}">
-	<meta name="twitter:description" content="SphericalKat's personal portfolio site, built with Rust.">
+	<meta name="twitter:description" content="{{ title }}">
 
 	<!-- opengraph tags -->
 	<meta property="og:image" content="https://og-image.vercel.app/{{ title }}.png" />
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="600">
-	<meta property="og:site_name" content="SphericalKat">
+	<meta property="og:site_name" content="Spherical_Kat">
 	<meta property="og:type" content="object">
 	<meta property="og:title" content="{{ title }}">
 	<meta property="og:url" content="https://sphericalk.at">
-	<meta property="og:description" content="SphericalKat's personal portfolio site, built with Rust.">
+	<meta property="og:description" content="{{ title }}">
 
   <title>{{ title }}</title>
 </head>
 
 <body>
-  <div class="flex flex-col max-w-5xl m-auto h-full p-6">
+  <div class="flex flex-col m-auto h-full p-6" style="max-width: 864px">
     {% include "header.html" %}
 
     <h1>Blog</h1>
