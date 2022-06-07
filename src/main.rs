@@ -139,14 +139,14 @@ fn get_blog<'r>(file: String) -> response::Result<'r> {
 
             let arena = Arena::new();
             let root = parse_document(&arena, &post_text, opts);
-            iter_nodes(root, &|node| match &mut node.data.borrow_mut().value {
-                &mut NodeValue::CodeBlock(ref mut block) => {
-                    let lang = String::from_utf8(block.info.clone()).unwrap();
-                    let code = String::from_utf8(block.literal.clone()).unwrap();
-                    block.literal = highlight_text(code, lang).as_bytes().to_vec();
-                }
-                _ => (),
-            });
+            // iter_nodes(root, &|node| match &mut node.data.borrow_mut().value {
+            //     &mut NodeValue::CodeBlock(ref mut block) => {
+            //         let lang = String::from_utf8(block.info.clone()).unwrap();
+            //         let code = String::from_utf8(block.literal.clone()).unwrap();
+            //         block.literal = highlight_text(code, lang).as_bytes().to_vec();
+            //     }
+            //     _ => (),
+            // });
 
             let mut html = vec![];
             format_html(root, opts, &mut html).unwrap();
