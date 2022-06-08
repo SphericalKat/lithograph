@@ -5,12 +5,13 @@ fields:
 - type: text
   name: title
   label: title
-- type: list
-  name: tags
-  label: tags
 - type: datetime
   name: date
   label: date
 - type: textarea
   name: blurb
   label: blurb
+- name: tags
+  type: tag_list
+  default: []
+  label: tags
