@@ -1,3 +1,10 @@
+---
+title: Tools of the Trade: Topgrade
+tags: [tooling, sysadmin]
+date: 2022-06-07
+blurb: In the third post of this series, let's talk about `topgrade`.
+---
+
 In the third post of this series, let's talk about `topgrade`.
 
 # What is topgrade?

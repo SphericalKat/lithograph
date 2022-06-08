@@ -81,6 +81,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "anyhow"
+version = "1.0.57"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "08f9b8508dccb7687a1d6c4ce66b2b0ecef467c94667de27d8d7fe1f8d2a9cdc"
+
+[[package]]
 name = "askama"
 version = "0.11.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -752,6 +758,7 @@ dependencies = [
  "chrono",
  "comrak",
  "lazy_static",
+ "markdown-meta-parser",
  "rocket",
  "rocket_contrib",
  "rust-embed",
@@ -782,6 +789,15 @@ name = "maplit"
 version = "1.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3e2e65a1a2e43cfcb47a895c4c8b10d1f4a61097f9f254f183aee60cad9c651d"
+
+[[package]]
+name = "markdown-meta-parser"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6a10a677d29998c21b9ce26b61616c87a9b5d69515cad5e6ff25ec5a3ae11ae5"
+dependencies = [
+ "anyhow",
+]
 
 [[package]]
 name = "matches"

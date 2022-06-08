@@ -310,6 +310,7 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
      -webkit-user-select: none; /* for button */
      -moz-user-select: none;
      -ms-user-select: none;
+     user-select: none;
  }
  
  div.code-toolbar > .toolbar > .toolbar-item > a,

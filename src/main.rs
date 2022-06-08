@@ -8,7 +8,7 @@ extern crate rust_embed;
 
 pub mod utils;
 
-use std::{ffi::OsStr, io::Cursor, path::PathBuf};
+use std::{ffi::OsStr, io::Cursor, path::PathBuf, collections::HashMap};
 
 use askama::Template;
 use chrono::{Datelike, Local, NaiveDate};
@@ -16,6 +16,7 @@ use comrak::{
     format_html, nodes::NodeValue, parse_document, Arena, ComrakExtensionOptions, ComrakOptions,
 };
 use lazy_static::lazy_static;
+use markdown_meta_parser::MetaData;
 use rocket::{
     http::{ContentType, Status},
     response,
@@ -54,6 +55,8 @@ struct Post {
     date: String,
     title: String,
     slug: String,
+    blurb: String,
+    tags: Vec<String>,
 }
 
 #[derive(Template)]
@@ -90,19 +93,56 @@ fn index() -> IndexTemplate {
 fn blog() -> BlogTemplate {
     let mut post_list: Vec<_> = Posts::iter()
         .map(|f| {
-            let slug = f.as_ref();
-            let split: Vec<_> = slug.splitn(2, '_').collect();
+
+            let filename = f.as_ref();
+
+            let d = Posts::get(&filename).unwrap();
+            let content = String::from_utf8(d.data.as_ref().to_vec()).unwrap();
+
+            let mut type_mark = HashMap::new();
+            type_mark.insert("tags".into(), "array");
+
+            let meta = MetaData {
+                content,
+                required: vec!["title".to_owned(), "tags".to_owned(), "date".to_owned(), "blurb".to_owned()],
+                type_mark  
+            };
+
+            let (parsed_meta, _) = meta.parse().unwrap();
+
+            let title = match parsed_meta["title"].clone() {
+                markdown_meta_parser::Value::String(t) => t,
+                _ => "".to_owned()
+            };
+
+            let date = match parsed_meta["date"].clone() {
+                markdown_meta_parser::Value::String(d) => d,
+                _ => "".to_owned()
+            };
+
+            let blurb = match parsed_meta["blurb"].clone() {
+                markdown_meta_parser::Value::String(b) => b,
+                _ => "".to_owned()
+            };
+
+            let tags = match parsed_meta["tags"].clone() {
+                markdown_meta_parser::Value::Array(t) => t,
+                _ => vec![]
+            };
+
             Post {
-                date: split[0].to_owned(),
-                title: split[1].replace("-", " ").replace(".md", ""),
-                slug: slug.to_owned().replace(".md", ""),
+                date,
+                title,
+                slug: f.as_ref().to_owned().replace(".md", ""),
+                blurb,
+                tags,
             }
         })
         .collect();
     
     post_list.sort_by(|a, b| {
-        let date_a = NaiveDate::parse_from_str(&a.date, "%d-%m-%y").unwrap();
-        let date_b = NaiveDate::parse_from_str(&b.date, "%d-%m-%y").unwrap();
+        let date_a = NaiveDate::parse_from_str(&a.date, "%Y-%m-%d").unwrap();
+        let date_b = NaiveDate::parse_from_str(&b.date, "%Y-%m-%d").unwrap();
         date_b.cmp(&date_a)
     });
 
@@ -150,17 +190,16 @@ fn get_blog<'r>(file: String) -> response::Result<'r> {
 
             let mut html = vec![];
             format_html(root, opts, &mut html).unwrap();
+
             response::Response::build()
                 .header(ContentType::HTML)
                 .sized_body(Cursor::new(
                     PostTemplate {
+                        title: "ad".to_owned(),
                         year: Local::now().date().year().to_string(),
                         post: String::from_utf8(html).unwrap(),
                         path: EXE.to_string(),
                         version: VERSION.to_string(),
-                        title: file.splitn(2, '_').collect::<Vec<_>>()[1]
-                            .to_owned()
-                            .replace('-', " "),
                     }
                     .render()
                     .unwrap(),

@@ -5,7 +5,7 @@
 }
 
 html {
-    font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 }
 
 @media (min-width: 1024px) {
@@ -34,7 +34,12 @@ body {
     width: 100%;
 }
 
-h1:not(first-child), h2:not(first-child), h3:not(first-child), h4:not(first-child), h5:not(first-child), h6:not(first-child) {
+h1:not(first-child),
+h2:not(first-child),
+h3:not(first-child),
+h4:not(first-child),
+h5:not(first-child),
+h6:not(first-child) {
     margin-top: 40px;
 }
 
@@ -189,4 +194,45 @@ code {
     background: rgba(120, 226, 160, .2);
     margin: 0 2px;
     padding: 1px 6px;
+}
+
+.post-card:not(:last-of-type) {
+    border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
+}
+
+h2.post-title {
+    margin-bottom: 10px;
+}
+
+.post-date {
+    color: rgba(120, 226, 160, .7);
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.post-meta {
+    margin-bottom: 10px;
+}
+
+.post-tags {
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.post-tag:not(:first-of-type) {
+    margin-left: 8px;
+}
+
+.post-container a {
+    text-decoration: none;
+}
+
+.post-container {
+    background: #1f2233;
+}
+
+.post-content {
+    margin-top: 30px;
+    margin-bottom: 25px;
+    font-size: 0.9em;
 }
