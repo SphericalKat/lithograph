@@ -13,7 +13,7 @@ use std::{ffi::OsStr, io::Cursor, path::PathBuf, collections::HashMap};
 use askama::Template;
 use chrono::{Datelike, Local, NaiveDate};
 use comrak::{
-    format_html, nodes::NodeValue, parse_document, Arena, ComrakExtensionOptions, ComrakOptions,
+    format_html, parse_document, Arena, ComrakExtensionOptions, ComrakOptions,
 };
 use lazy_static::lazy_static;
 use markdown_meta_parser::MetaData;
@@ -23,7 +23,6 @@ use rocket::{
 };
 use rustc_version_runtime::version;
 
-use crate::utils::{highlight_text, iter_nodes};
 
 lazy_static! {
     static ref EXE: String = std::env::current_exe()
@@ -130,11 +129,32 @@ fn blog() -> BlogTemplate {
                 _ => vec![]
             };
 
+            let mut opts = &mut ComrakOptions::default();
+            opts.extension = ComrakExtensionOptions {
+                strikethrough: true,
+                tagfilter: false,
+                table: true,
+                autolink: true,
+                tasklist: true,
+                superscript: false,
+                header_ids: Some("#".to_string()),
+                footnotes: false,
+                description_lists: false,
+                front_matter_delimiter: None,
+            };
+            opts.render.unsafe_ = true; // needed to embed gists
+
+            let arena = Arena::new();
+            let root = parse_document(&arena, &blurb, opts);
+
+            let mut html = vec![];
+            format_html(root, opts, &mut html).unwrap();
+
             Post {
                 date,
                 title,
                 slug: f.as_ref().to_owned().replace(".md", ""),
-                blurb,
+                blurb: String::from_utf8(html).unwrap(),
                 tags,
             }
         })
@@ -162,6 +182,23 @@ fn get_blog<'r>(file: String) -> response::Result<'r> {
         || Err(Status::NotFound),
         |d| {
             let post_text = String::from_utf8(d.data.as_ref().to_vec()).unwrap();
+
+            let mut type_mark = HashMap::new();
+            type_mark.insert("tags".into(), "array");
+
+            let meta = MetaData {
+                content: post_text,
+                required: vec!["title".to_owned(), "tags".to_owned(), "date".to_owned(), "blurb".to_owned()],
+                type_mark  
+            };
+
+            let (parsed_meta, body) = meta.parse().unwrap();
+
+            let title = match parsed_meta["title"].clone() {
+                markdown_meta_parser::Value::String(t) => t,
+                _ => "".to_owned()
+            };
+
             let mut opts = &mut ComrakOptions::default();
             opts.extension = ComrakExtensionOptions {
                 strikethrough: true,
@@ -178,15 +215,7 @@ fn get_blog<'r>(file: String) -> response::Result<'r> {
             opts.render.unsafe_ = true; // needed to embed gists
 
             let arena = Arena::new();
-            let root = parse_document(&arena, &post_text, opts);
-            // iter_nodes(root, &|node| match &mut node.data.borrow_mut().value {
-            //     &mut NodeValue::CodeBlock(ref mut block) => {
-            //         let lang = String::from_utf8(block.info.clone()).unwrap();
-            //         let code = String::from_utf8(block.literal.clone()).unwrap();
-            //         block.literal = highlight_text(code, lang).as_bytes().to_vec();
-            //     }
-            //     _ => (),
-            // });
+            let root = parse_document(&arena, &body, opts);
 
             let mut html = vec![];
             format_html(root, opts, &mut html).unwrap();
@@ -195,7 +224,7 @@ fn get_blog<'r>(file: String) -> response::Result<'r> {
                 .header(ContentType::HTML)
                 .sized_body(Cursor::new(
                     PostTemplate {
-                        title: "ad".to_owned(),
+                        title,
                         year: Local::now().date().year().to_string(),
                         post: String::from_utf8(html).unwrap(),
                         path: EXE.to_string(),
