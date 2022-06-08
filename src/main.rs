@@ -110,7 +110,7 @@ fn blog() -> BlogTemplate {
             let (parsed_meta, _) = meta.parse().unwrap();
 
             let title = match parsed_meta["title"].clone() {
-                markdown_meta_parser::Value::String(t) => t,
+                markdown_meta_parser::Value::String(t) => t.replace("'", ""),
                 _ => "".to_owned()
             };
 

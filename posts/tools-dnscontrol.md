@@ -1,5 +1,5 @@
 ---
-title: Tools of the Trade: Declarative DNS with DNSControl
+title: 'Tools of the Trade: Declarative DNS with DNSControl'
 tags: [tooling, dns]
 date: 2022-05-27
 blurb: [DNSControl](https://stackexchange.github.io/dnscontrol/) is an **opinionated** platform for seamlessly managing your DNS configuration across any number of DNS hosts, both in the cloud or in your own infrastructure.
