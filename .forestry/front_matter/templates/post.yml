@@ -14,5 +14,3 @@ fields:
 - type: textarea
   name: blurb
   label: blurb
-pages:
-- posts/tools-of-the-trade-declarative-dns-with-dnscontrol.md
