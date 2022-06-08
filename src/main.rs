@@ -120,7 +120,7 @@ fn blog() -> BlogTemplate {
             };
 
             let blurb = match parsed_meta["blurb"].clone() {
-                markdown_meta_parser::Value::String(b) => b,
+                markdown_meta_parser::Value::String(b) => b.replace('"', ""),
                 _ => "".to_owned()
             };
 

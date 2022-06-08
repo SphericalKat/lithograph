@@ -2,7 +2,7 @@
 title: Using Cloudflare workers and GitHub Actions to deploy statically generated sites
 tags: [web, cloudflare, devops, github]
 date: 2020-09-21
-blurb: Deploying performant websites at massive scale has never been easier (or cheaper)
+blurb: "Deploying performant websites at massive scale has never been easier (or cheaper)"
 ---
 
 # Using Cloudflare Workers and GitHub Actions to deploy statically generated sites

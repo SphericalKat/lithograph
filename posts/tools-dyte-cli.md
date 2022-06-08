@@ -2,7 +2,7 @@
 title: 'Tools of the Trade: Dyte CLI'
 tags: [tooling, cli, dyte]
 date: 2022-05-05
-blurb: Dyte CLI brings [Dyte](https://dyte.io) to your terminal. It reduces context switching, helps you focus, and empowers you to more easily script and create your own workflows on top of Dyte.
+blurb: "Dyte CLI brings [Dyte](https://dyte.io) to your terminal. It reduces context switching, helps you focus, and empowers you to more easily script and create your own workflows on top of Dyte."
 ---
 
 # Tools of the Trade: Dyte CLI
