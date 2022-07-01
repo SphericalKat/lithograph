@@ -48,7 +48,7 @@ We kept a lot of things in mind while designing the CLI so that our end-users ha
 
 ### #️⃣ POSIX compliance
 
-Unix-like operating systems popularised the use of the command line and tools such as awkand sed. Such tools have effectively standardised the behaviour of command line options (aka flags), options-arguments, and other operands.
+Unix-like operating systems popularised the use of the command line and tools such as `awk` and `sed`. Such tools have effectively standardised the behaviour of command line options (aka flags), options-arguments, and other operands.
 
 Why is it important? Users might get confused if our CLI’s syntax for arguments, options, or command parameters deviate from the de facto Unix standards they are used to.
 
