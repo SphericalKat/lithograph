@@ -24,7 +24,7 @@ It lets you _declare_ your DNS records using a JavaScript-ish DSL (domain specif
 
 ![Example of a DNS configuration using dnscontrol](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ofqaevh7g2vd0d1xidrp.png)
 
-## Okay, why should I switch?
+## Why should I switch?
 
 Switching to a new tool can be scary, but here's some reasons that make DNScontrol unrivaled (in my opinion):
 
